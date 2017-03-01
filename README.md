@@ -10,3 +10,9 @@ git submodule update --init --recursive
 npm install
 npm test
 ```
+
+Current compilation errors are in [RESULTS.txt](./RESULTS.txt)
+
+## See also
+
+https://github.com/DefinitelyTyped/DefinitelyTyped/issues/11170
