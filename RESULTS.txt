@@ -1,0 +1,360 @@
+
+89 var other = _.concat(array, 2, [3], [[4]]);
+               ~~~~~~~~
+
+build/examples.ts(89,13): error TS2453: The type argument for type parameter 'T' cannot be inferred from the usage. Consider specifying the type arguments explicitly.
+  Type argument candidate 'number' is not a valid type argument because it is not a supertype of candidate 'number[]'.
+
+
+344 _.nth(array, 1);
+      ~~~
+
+build/examples.ts(344,3): error TS2339: Property 'nth' does not exist on type 'LoDashStatic'.
+
+
+347 _.nth(array, -2);
+      ~~~
+
+build/examples.ts(347,3): error TS2339: Property 'nth' does not exist on type 'LoDashStatic'.
+
+
+378 _.pullAllWith(array, [{ 'x': 3, 'y': 4 }], _.isEqual);
+      ~~~~~~~~~~~
+
+build/examples.ts(378,3): error TS2339: Property 'pullAllWith' does not exist on type 'LoDashStatic'.
+
+
+592                         var zipped = _.zip(['a', 'b'], [1, 2], [true, false]);
+                                         ~~~~~
+
+build/examples.ts(592,38): error TS2453: The type argument for type parameter 'T' cannot be inferred from the usage. Consider specifying the type arguments explicitly.
+  Type argument candidate 'string' is not a valid type argument because it is not a supertype of candidate 'number'.
+
+
+635                         _.zip(['a', 'b'], [1, 2], [true, false]);
+                            ~~~~~
+
+build/examples.ts(635,25): error TS2453: The type argument for type parameter 'T' cannot be inferred from the usage. Consider specifying the type arguments explicitly.
+  Type argument candidate 'string' is not a valid type argument because it is not a supertype of candidate 'number'.
+
+
+645                         _.zipObjectDeep(['a.b[0].c', 'a.b[1].d'], [1, 2]);
+                              ~~~~~~~~~~~~~
+
+build/examples.ts(645,27): error TS2339: Property 'zipObjectDeep' does not exist on type 'LoDashStatic'.
+
+
+670   .value();
+       ~~~~~
+
+build/examples.ts(670,4): error TS2339: Property 'value' does not exist on type '{}'.
+
+
+717   .pick('user')
+       ~~~~
+
+build/examples.ts(717,4): error TS2339: Property 'pick' does not exist on type '{}'.
+
+
+743 wrapped.next();
+            ~~~~
+
+build/examples.ts(743,9): error TS2339: Property 'next' does not exist on type 'LoDashImplicitNumberArrayWrapper'.
+
+
+746 wrapped.next();
+            ~~~~
+
+build/examples.ts(746,9): error TS2339: Property 'next' does not exist on type 'LoDashImplicitNumberArrayWrapper'.
+
+
+749 wrapped.next();
+            ~~~~
+
+build/examples.ts(749,9): error TS2339: Property 'next' does not exist on type 'LoDashImplicitNumberArrayWrapper'.
+
+
+756 wrapped[Symbol.iterator]() === wrapped;
+            ~~~~~~
+
+build/examples.ts(756,9): error TS2304: Cannot find name 'Symbol'.
+
+
+759 Array.from(wrapped);
+          ~~~~
+
+build/examples.ts(759,7): error TS2339: Property 'from' does not exist on type 'ArrayConstructor'.
+
+
+890 _.flatMapDeep([1, 2], duplicate);
+      ~~~~~~~~~~~
+
+build/examples.ts(890,3): error TS2339: Property 'flatMapDeep' does not exist on type 'LoDashStatic'.
+
+
+899 _.flatMapDepth([1, 2], duplicate, 2);
+      ~~~~~~~~~~~~
+
+build/examples.ts(899,3): error TS2339: Property 'flatMapDepth' does not exist on type 'LoDashStatic'.
+
+
+1224 curried(1)(_, 3)(2);
+     ~~~~~~~~~~~~~~~~~~~
+
+build/examples.ts(1224,1): error TS2349: Cannot invoke an expression whose type lacks a call signature. Type 'any[]' has no compatible call signatures.
+
+
+1245 curried(3)(1, _)(2);
+     ~~~~~~~~~~~~~~~~~~~
+
+build/examples.ts(1245,1): error TS2349: Cannot invoke an expression whose type lacks a call signature. Type 'any[]' has no compatible call signatures.
+
+
+1298 values.cache.set(object, ['a', 'b']);
+                      ~~~~~~
+
+build/examples.ts(1298,18): error TS2345: Argument of type '{ 'a': number; 'b': number; }' is not assignable to parameter of type 'string'.
+
+
+1303 _.memoize.Cache = WeakMap;
+                       ~~~~~~~
+
+build/examples.ts(1303,19): error TS2304: Cannot find name 'WeakMap'.
+
+
+1399 var numbers = Promise.all([
+                   ~~~~~~~
+
+build/examples.ts(1399,15): error TS2693: 'Promise' only refers to a type, but is being used as a value here.
+
+
+1400   Promise.resolve(40),
+       ~~~~~~~
+
+build/examples.ts(1400,3): error TS2693: 'Promise' only refers to a type, but is being used as a value here.
+
+
+1401   Promise.resolve(36)
+       ~~~~~~~
+
+build/examples.ts(1401,3): error TS2693: 'Promise' only refers to a type, but is being used as a value here.
+
+
+1513 _.conformsTo(object, { 'b': function(n) { return n > 1; } });
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+build/examples.ts(1513,22): error TS2345: Argument of type '{ 'b': (n: number) => boolean; }' is not assignable to parameter of type 'ConformsPredicateObject<{ 'a': number; 'b': number; }>'.
+  Property 'a' is missing in type '{ 'b': (n: number) => boolean; }'.
+
+
+1516 _.conformsTo(object, { 'b': function(n) { return n > 2; } });
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+build/examples.ts(1516,22): error TS2345: Argument of type '{ 'b': (n: number) => boolean; }' is not assignable to parameter of type 'ConformsPredicateObject<{ 'a': number; 'b': number; }>'.
+  Property 'a' is missing in type '{ 'b': (n: number) => boolean; }'.
+
+
+1785                         _.isMap(new Map);
+                                         ~~~
+
+build/examples.ts(1785,37): error TS2693: 'Map' only refers to a type, but is being used as a value here.
+
+
+1788 _.isMap(new WeakMap);
+                 ~~~~~~~
+
+build/examples.ts(1788,13): error TS2304: Cannot find name 'WeakMap'.
+
+
+1916                         _.isSet(new Set);
+                                         ~~~
+
+build/examples.ts(1916,37): error TS2693: 'Set' only refers to a type, but is being used as a value here.
+
+
+1919 _.isSet(new WeakSet);
+                 ~~~~~~~
+
+build/examples.ts(1919,13): error TS2693: 'WeakSet' only refers to a type, but is being used as a value here.
+
+
+1932                         _.isSymbol(Symbol.iterator);
+                                        ~~~~~~
+
+build/examples.ts(1932,36): error TS2304: Cannot find name 'Symbol'.
+
+
+1940                         _.isTypedArray(new Uint8Array);
+                                            ~~~~~~~~~~~~~~
+
+build/examples.ts(1940,40): error TS2346: Supplied parameters do not match any signature of call target.
+
+
+1956                         _.isWeakMap(new WeakMap);
+                                             ~~~~~~~
+
+build/examples.ts(1956,41): error TS2304: Cannot find name 'WeakMap'.
+
+
+1959 _.isWeakMap(new Map);
+                     ~~~
+
+build/examples.ts(1959,17): error TS2693: 'Map' only refers to a type, but is being used as a value here.
+
+
+1964                         _.isWeakSet(new WeakSet);
+                                             ~~~~~~~
+
+build/examples.ts(1964,41): error TS2693: 'WeakSet' only refers to a type, but is being used as a value here.
+
+
+1967 _.isWeakSet(new Set);
+                     ~~~
+
+build/examples.ts(1967,17): error TS2693: 'Set' only refers to a type, but is being used as a value here.
+
+
+2008                         _.toFinite(3.2);
+                               ~~~~~~~~
+
+build/examples.ts(2008,27): error TS2339: Property 'toFinite' does not exist on type 'LoDashStatic'.
+
+
+2011 _.toFinite(Number.MIN_VALUE);
+       ~~~~~~~~
+
+build/examples.ts(2011,3): error TS2339: Property 'toFinite' does not exist on type 'LoDashStatic'.
+
+
+2014 _.toFinite(Infinity);
+       ~~~~~~~~
+
+build/examples.ts(2014,3): error TS2339: Property 'toFinite' does not exist on type 'LoDashStatic'.
+
+
+2017 _.toFinite('3.2');
+       ~~~~~~~~
+
+build/examples.ts(2017,3): error TS2339: Property 'toFinite' does not exist on type 'LoDashStatic'.
+
+
+2141 defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 });
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+build/examples.ts(2141,1): error TS2346: Supplied parameters do not match any signature of call target.
+
+
+2152 defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 });
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+build/examples.ts(2152,1): error TS2346: Supplied parameters do not match any signature of call target.
+
+
+2202 _.findKey(users, function(o) { return o.age < 40; });
+                                             ~~~
+
+build/examples.ts(2202,41): error TS2339: Property 'age' does not exist on type '{}'.
+
+
+2225 _.findLastKey(users, function(o) { return o.age < 40; });
+                                                 ~~~
+
+build/examples.ts(2225,45): error TS2339: Property 'age' does not exist on type '{}'.
+
+
+2520 console.log(object.x[0].y.z);
+                        ~
+
+build/examples.ts(2520,20): error TS2339: Property 'x' does not exist on type '{ 'a': { 'b': { 'c': number; }; }[]; }'.
+
+
+2563   (result[value] || (result[value] = [])).push(key);
+                                               ~~~~
+
+build/examples.ts(2563,43): error TS2339: Property 'push' does not exist on type '{}'.
+
+
+2591 console.log(object.x[0].y.z);
+                        ~
+
+build/examples.ts(2591,20): error TS2339: Property 'x' does not exist on type '{ 'a': { 'b': { 'c': number; }; }[]; }'.
+
+
+2598 _.updateWith(object, '[0][1]', _.constant('a'), Object);
+       ~~~~~~~~~~
+
+build/examples.ts(2598,3): error TS2339: Property 'updateWith' does not exist on type 'LoDashStatic'.
+
+
+3036                         var func = _.cond([
+                                          ~~~~
+
+build/examples.ts(3036,38): error TS2339: Property 'cond' does not exist on type 'LoDashStatic'.
+
+
+3085 var addSquare = _.flow([_.add, square]);
+                            ~~~~~~~~~~~~~~~
+
+build/examples.ts(3085,24): error TS2345: Argument of type '((augend: number, addend: number) => number)[]' is not assignable to parameter of type 'Function'.
+  Property 'apply' is missing in type '((augend: number, addend: number) => number)[]'.
+
+
+3095 var addSquare = _.flowRight([square, _.add]);
+                                 ~~~~~~~~~~~~~~~
+
+build/examples.ts(3095,29): error TS2345: Argument of type '((augend: number, addend: number) => number)[]' is not assignable to parameter of type 'Function'.
+
+
+3126 _.iteratee = _.wrap(_.iteratee, function(iteratee, func) {
+       ~~~~~~~~
+
+build/examples.ts(3126,3): error TS2540: Cannot assign to 'iteratee' because it is a constant or a read-only property.
+
+
+3132 _.filter(['abc', 'def'], /ef/);
+                              ~~~~
+
+build/examples.ts(3132,26): error TS2345: Argument of type 'RegExp' is not assignable to parameter of type 'string'.
+
+
+3183     return /[aeiou]/i.test(v);
+                                ~
+
+build/examples.ts(3183,28): error TS2345: Argument of type '{}' is not assignable to parameter of type 'string'.
+
+
+3188 _.vowels('fred');
+       ~~~~~~
+
+build/examples.ts(3188,3): error TS2339: Property 'vowels' does not exist on type 'LoDashStatic'.
+
+
+3191 _('fred').vowels().value();
+               ~~~~~~
+
+build/examples.ts(3191,11): error TS2339: Property 'vowels' does not exist on type 'LoDashImplicitStringWrapper'.
+
+
+3195 _('fred').vowels();
+               ~~~~~~
+
+build/examples.ts(3195,11): error TS2339: Property 'vowels' does not exist on type 'LoDashImplicitStringWrapper'.
+
+
+3397                         _.divide(6, 4);
+                               ~~~~~~
+
+build/examples.ts(3397,27): error TS2339: Property 'divide' does not exist on type 'LoDashStatic'.
+
+
+3443 _.meanBy(objects, 'n');
+                       ~~~
+
+build/examples.ts(3443,19): error TS2345: Argument of type '"n"' is not assignable to parameter of type 'DictionaryIterator<{ 'n': number; }, any>'.
+
+
+3467                         _.multiply(6, 4);
+                               ~~~~~~~~
+
+build/examples.ts(3467,27): error TS2339: Property 'multiply' does not exist on type 'LoDashStatic'.
+

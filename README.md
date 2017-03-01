@@ -7,5 +7,6 @@ and runs them agains the [typescript](https://github.com/Microsoft/TypeScript) c
 
 ```
 git submodule update --init --recursive
+npm install
 npm test
 ```
