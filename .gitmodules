@@ -1,0 +1,6 @@
+[submodule "lodash"]
+	path = lodash
+	url = https://github.com/lodash/lodash.git
+[submodule "DefinitelyTyped"]
+	path = DefinitelyTyped
+	url = git@github.com:rzymek/DefinitelyTyped.git
