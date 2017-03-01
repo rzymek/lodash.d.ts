@@ -1,0 +1,18 @@
+{
+  "name": "lodash.d.ts",
+  "version": "4.17.4",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "mkdir -p build && npm run build:compile && npm run build:process",
+    "build:compile": "tsc --outFile build/extract-examples.js src/extract-examples.ts",
+    "build:process": "jsdoc lodash/lodash.js -X | node ./build/extract-examples.js > build/examples.ts",
+    "test": "npm run build && npm run test:run",
+    "test:run": "tsc --pretty ./build/examples.ts",
+    "clean": "rm -rf build; rm -f src/*.js"
+  },
+  "dependencies": {
+    "jsdoc": "^3.4.3",
+    "typescript": "^2.2.1"
+  }
+}
