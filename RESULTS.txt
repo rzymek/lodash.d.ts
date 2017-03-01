@@ -6,18 +6,6 @@ build/examples.ts(89,13): error TS2453: The type argument for type parameter 'T'
   Type argument candidate 'number' is not a valid type argument because it is not a supertype of candidate 'number[]'.
 
 
-344 _.nth(array, 1);
-      ~~~
-
-build/examples.ts(344,3): error TS2339: Property 'nth' does not exist on type 'LoDashStatic'.
-
-
-347 _.nth(array, -2);
-      ~~~
-
-build/examples.ts(347,3): error TS2339: Property 'nth' does not exist on type 'LoDashStatic'.
-
-
 378 _.pullAllWith(array, [{ 'x': 3, 'y': 4 }], _.isEqual);
       ~~~~~~~~~~~
 
