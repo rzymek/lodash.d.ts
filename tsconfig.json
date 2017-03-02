@@ -1,10 +1,18 @@
 {
+    "files": [
+        "./DefinitelyTyped/lodash/index.d.ts",
+        "./build/examples.ts"
+    ],
     "compilerOptions": {
         "module": "commonjs",
         "target": "es6",
         "noImplicitAny": false,
         "strictNullChecks": false,
         "noEmit": true,
-        "forceConsistentCasingInFileNames": true
+        "pretty": true,
+        "lib": [
+            "es2016",
+            "dom"
+        ]
     }
 }
