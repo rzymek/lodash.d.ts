@@ -1,0 +1,12 @@
+{
+  "name": "lodash-typeings-test",
+  "version": "1.0.0",
+  "description": "Sandbox for testing contributions to lodash typings",
+  "repository": "https://github.com/rzymek/lodash.d.ts",
+  "author": "Krzysiek Rzymkowski <rzymek@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/lodash.nth": "4.11.2",
+    "lodash.nth": "^4.11.2"
+  }
+}
