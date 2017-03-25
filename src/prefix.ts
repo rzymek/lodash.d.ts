@@ -1,6 +1,6 @@
-import * as _ from "../DefinitelyTyped/lodash/";
+import * as _ from "../DefinitelyTyped/types/lodash/";
 
-declare module "../DefinitelyTyped/lodash/" {
+declare module "../DefinitelyTyped/types/lodash/" {
     interface LoDashStatic {
         foo(): void;
         bar(): void

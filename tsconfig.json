@@ -1,6 +1,6 @@
 {
     "files": [
-        "./DefinitelyTyped/lodash/index.d.ts",
+        "./DefinitelyTyped/types/lodash/index.d.ts",
         "./build/examples.ts"
     ],
     "compilerOptions": {
