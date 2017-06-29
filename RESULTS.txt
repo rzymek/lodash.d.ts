@@ -26,12 +26,6 @@ build/examples.ts(634,25): error TS2453: The type argument for type parameter 'T
   Type argument candidate 'string' is not a valid type argument because it is not a supertype of candidate 'number'.
 
 
-644                         _.zipObjectDeep(['a.b[0].c', 'a.b[1].d'], [1, 2]);
-                              ~~~~~~~~~~~~~
-
-build/examples.ts(644,27): error TS2339: Property 'zipObjectDeep' does not exist on type 'LoDashStatic'.
-
-
 669   .value();
        ~~~~~
 
@@ -106,8 +100,8 @@ build/examples.ts(1297,18): error TS2345: Argument of type '{ 'a': number; 'b': 
 1405 }));
      ~~
 
-build/examples.ts(1403,14): error TS2345: Argument of type 'Function' is not assignable to parameter of type '(value: number[]) => {} | PromiseLike<{}>'.
-  Type 'Function' provides no match for the signature '(value: number[]): {} | PromiseLike<{}>'
+build/examples.ts(1403,14): error TS2345: Argument of type 'Function' is not assignable to parameter of type '(value: number[]) => number[] | PromiseLike<number[]>'.
+  Type 'Function' provides no match for the signature '(value: number[]): number[] | PromiseLike<number[]>'.
 
 
 1512 _.conformsTo(object, { 'b': function(n) { return n > 1; } });
@@ -128,30 +122,6 @@ build/examples.ts(1515,22): error TS2345: Argument of type '{ 'b': (n: number) =
                                             ~~~~~~~~~~~~~~
 
 build/examples.ts(1939,40): error TS2346: Supplied parameters do not match any signature of call target.
-
-
-2007                         _.toFinite(3.2);
-                               ~~~~~~~~
-
-build/examples.ts(2007,27): error TS2339: Property 'toFinite' does not exist on type 'LoDashStatic'.
-
-
-2010 _.toFinite(Number.MIN_VALUE);
-       ~~~~~~~~
-
-build/examples.ts(2010,3): error TS2339: Property 'toFinite' does not exist on type 'LoDashStatic'.
-
-
-2013 _.toFinite(Infinity);
-       ~~~~~~~~
-
-build/examples.ts(2013,3): error TS2339: Property 'toFinite' does not exist on type 'LoDashStatic'.
-
-
-2016 _.toFinite('3.2');
-       ~~~~~~~~
-
-build/examples.ts(2016,3): error TS2339: Property 'toFinite' does not exist on type 'LoDashStatic'.
 
 
 2140 defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 });
@@ -208,19 +178,6 @@ build/examples.ts(2597,3): error TS2339: Property 'updateWith' does not exist on
 build/examples.ts(3035,38): error TS2339: Property 'cond' does not exist on type 'LoDashStatic'.
 
 
-3084 var addSquare = _.flow([_.add, square]);
-                            ~~~~~~~~~~~~~~~
-
-build/examples.ts(3084,24): error TS2345: Argument of type '((augend: number, addend: number) => number)[]' is not assignable to parameter of type 'Function'.
-  Property 'apply' is missing in type '((augend: number, addend: number) => number)[]'.
-
-
-3094 var addSquare = _.flowRight([square, _.add]);
-                                 ~~~~~~~~~~~~~~~
-
-build/examples.ts(3094,29): error TS2345: Argument of type '((augend: number, addend: number) => number)[]' is not assignable to parameter of type 'Function'.
-
-
 3125 _.iteratee = _.wrap(_.iteratee, function(iteratee, func) {
        ~~~~~~~~
 
@@ -251,20 +208,8 @@ build/examples.ts(3190,11): error TS2339: Property 'vowels' does not exist on ty
 build/examples.ts(3194,11): error TS2339: Property 'vowels' does not exist on type 'LoDashImplicitStringWrapper'.
 
 
-3396                         _.divide(6, 4);
-                               ~~~~~~
-
-build/examples.ts(3396,27): error TS2339: Property 'divide' does not exist on type 'LoDashStatic'.
-
-
 3442 _.meanBy(objects, 'n');
                        ~~~
 
 build/examples.ts(3442,19): error TS2345: Argument of type '"n"' is not assignable to parameter of type 'DictionaryIterator<{ 'n': number; }, any>'.
-
-
-3466                         _.multiply(6, 4);
-                               ~~~~~~~~
-
-build/examples.ts(3466,27): error TS2339: Property 'multiply' does not exist on type 'LoDashStatic'.
 
